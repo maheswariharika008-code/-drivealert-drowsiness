@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-cockpit-hairline;
+  }
+  body {
+    @apply bg-cockpit-bg text-cockpit-textPrimary font-body antialiased;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(34, 211, 176, 0.06), transparent),
+      radial-gradient(ellipse 60% 40% at 100% 100%, rgba(251, 191, 36, 0.04), transparent);
+    background-attachment: fixed;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+  :focus-visible {
+    outline: 2px solid #22d3b0;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-cockpit-panel/60 backdrop-blur-glass border border-cockpit-hairline rounded-2xl shadow-glass;
+  }
+  .mono-readout {
+    @apply font-mono tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

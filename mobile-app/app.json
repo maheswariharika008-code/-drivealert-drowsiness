@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "DriveAlert",
+    "slug": "drivealert-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "backgroundColor": "#0A0E13"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.drivealert.mobile",
+      "infoPlist": {
+        "UIBackgroundModes": ["audio", "remote-notification"]
+      }
+    },
+    "android": {
+      "package": "com.drivealert.mobile",
+      "permissions": [
+        "VIBRATE",
+        "WAKE_LOCK",
+        "RECEIVE_BOOT_COMPLETED",
+        "com.google.android.c2dm.permission.RECEIVE"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#FB4141",
+          "sounds": ["./assets/alarm.wav"]
+        }
+      ]
+    ],
+    "extra": {
+      "backendUrl": "http://10.50.67.146:5000"
+    }
+  }
+}
